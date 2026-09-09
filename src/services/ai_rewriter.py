@@ -4,6 +4,7 @@ import json
 import os
 
 from openai import OpenAI
+import streamlit as st
 
 from src.models.cv import GeneratedCV
 
@@ -13,7 +14,7 @@ class AIRefinementError(RuntimeError):
 
 
 def refine_cv_with_ai(generated: GeneratedCV) -> GeneratedCV:
-    api_key = os.getenv("OPENAI_API_KEY", "").strip()
+    api_key = st.secrets.get("OPENAI_API_KEY", "").strip()
     if not api_key:
         raise AIRefinementError("OPENAI_API_KEY is not configured")
     model = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
