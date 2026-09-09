@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<style>
+@page { size: A4; margin: 16mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #26342e; background: #f5f0e8; font-family: Arial, Helvetica, sans-serif; }
+.toolbar { display: flex; justify-content: flex-end; gap: 8px; margin: 0 auto 16px; max-width: 800px; }
+.toolbar button { border: 0; border-radius: 5px; background: #26342e; color: #fff; padding: 10px 15px; cursor: pointer; font-weight: 600; }
+.paper { background: #fffdf8; max-width: 800px; margin: auto; padding: 58px 64px; box-shadow: 0 12px 40px rgba(38,52,46,.12); }
+.cv-header { display: flex; justify-content: space-between; gap: 24px; border-bottom: 2px solid #26342e; padding-bottom: 20px; }
+.cv-header h1 { font: 500 38px Georgia, serif; letter-spacing: -1px; margin: 0 0 5px; }
+.role { color: #b9583d; font-size: 14px; font-weight: 700; margin: 0; }
+.contact { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; color: #718079; font-size: 10px; text-align: right; }
+.section { margin-top: 25px; break-inside: avoid; }
+.section h2 { color: #b9583d; border-bottom: 1px solid #dddcd5; font-size: 10px; letter-spacing: 1.6px; margin: 0 0 10px; padding-bottom: 7px; text-transform: uppercase; }
+.section p, .section li { font-size: 11px; line-height: 1.55; }
+.section p { margin: 5px 0; }
+.competencies { color: #4f6257; font-weight: 600; }
+.job { break-inside: avoid; margin-top: 18px; }
+.job-top { display: flex; justify-content: space-between; gap: 16px; }
+.job-title { font-size: 13px; font-weight: 700; }
+.job-company, .job-date { color: #718079; font-size: 10px; margin-top: 4px; }
+.job-date { white-space: nowrap; }
+ul { margin: 8px 0; padding-left: 18px; }
+li { margin: 4px 0; padding-left: 3px; }
+.edu { display: flex; gap: 10px; font-size: 11px; margin: 8px 0; }
+.edu span { color: #718079; }
+@media print { body { background: #fff; } .toolbar { display: none; } .paper { box-shadow: none; max-width: none; padding: 0; } }
+@media (max-width: 640px) { .paper { padding: 30px 24px; } .cv-header { display: block; } .contact { align-items: flex-start; text-align: left; margin-top: 14px; } .job-top { display: block; } .job-date { margin-top: 5px; } }
+</style>
+</head>
+<body>
+<div class="toolbar"><button onclick="window.print()">Print / Save PDF</button></div>
+<div class="paper">{{CV_BODY}}</div>
+</body>
+</html>
